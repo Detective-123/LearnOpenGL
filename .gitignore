@@ -1,0 +1,9 @@
+# Directories
+.vs/
+x64/
+
+# Files
+*.user
+*.pdb
+*.exe
+*.obj
