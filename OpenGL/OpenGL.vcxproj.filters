@@ -29,7 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\Basic.shader" />
     <None Include="res\shaders\Vertex.shader" />
     <None Include="res\shaders\Fragment.shader" />
   </ItemGroup>
@@ -46,6 +45,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\textures\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\chad.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\awesomeface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\bank.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\pepe.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
