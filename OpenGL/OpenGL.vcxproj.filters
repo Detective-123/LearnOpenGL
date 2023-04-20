@@ -1298,9 +1298,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\textures\wall.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\textures\container.jpg">
       <Filter>Resource Files</Filter>
     </Image>
@@ -1313,8 +1310,23 @@
     <Image Include="res\textures\bank.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\pepe.png">
+    <Image Include="res\textures\garden.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\grass_block.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\shovel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\grass_b2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\dirt.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Error.txt" />
   </ItemGroup>
 </Project>

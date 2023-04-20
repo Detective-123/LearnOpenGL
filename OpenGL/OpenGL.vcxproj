@@ -571,8 +571,14 @@
     <Image Include="res\textures\bank.jpg" />
     <Image Include="res\textures\chad.png" />
     <Image Include="res\textures\container.jpg" />
-    <Image Include="res\textures\pepe.png" />
-    <Image Include="res\textures\wall.jpg" />
+    <Image Include="res\textures\dirt.jpg" />
+    <Image Include="res\textures\garden.jpg" />
+    <Image Include="res\textures\grass_b2.png" />
+    <Image Include="res\textures\grass_block.png" />
+    <Image Include="res\textures\shovel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Error.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
