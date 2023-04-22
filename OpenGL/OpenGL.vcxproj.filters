@@ -35,8 +35,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\Vertex.shader" />
-    <None Include="res\shaders\Fragment.shader" />
+    <None Include="res\shaders\vecColor.shader" />
+    <None Include="res\shaders\fragColor.shader" />
     <None Include="src\vendors\glm\detail\func_common.inl">
       <Filter>Header Files</Filter>
     </None>
@@ -445,6 +445,8 @@
     <None Include="src\vendors\glm\gtx\wrap.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="res\shaders\vecLight_cube.shader" />
+    <None Include="res\shaders\fragLight_cube.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\shader_s.h">

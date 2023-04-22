@@ -142,8 +142,10 @@
     <ClCompile Include="src\vendors\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaders\Fragment.shader" />
-    <None Include="res\shaders\Vertex.shader" />
+    <None Include="res\shaders\fragColor.shader" />
+    <None Include="res\shaders\vecColor.shader" />
+    <None Include="res\shaders\fragLight_cube.shader" />
+    <None Include="res\shaders\vecLight_cube.shader" />
     <None Include="src\vendors\glm\detail\func_common.inl" />
     <None Include="src\vendors\glm\detail\func_common_simd.inl" />
     <None Include="src\vendors\glm\detail\func_exponential.inl" />
