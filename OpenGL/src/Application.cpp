@@ -157,7 +157,7 @@ int main()
         lightPos.x = 2.0f * sin(glfwGetTime());
         lightPos.y = 1.0f;
         // lightPos.z = 1.5f * cos(glfwGetTime());
-
+        // for real
         // activating shader
         lightingShader.use();
         lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
