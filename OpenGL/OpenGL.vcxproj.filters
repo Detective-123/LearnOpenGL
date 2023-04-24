@@ -1309,28 +1309,22 @@
     <Image Include="res\textures\container.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\chad.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\textures\awesomeface.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\bank.jpg">
+    <Image Include="res\textures\container2.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\garden.jpg">
+    <Image Include="res\textures\diamond.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\grass_block.png">
+    <Image Include="res\textures\coal.jpg">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\shovel.png">
+    <Image Include="res\textures\container2_specular.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\textures\grass_b2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\textures\dirt.jpg">
+    <Image Include="res\textures\matrix.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

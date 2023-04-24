@@ -572,14 +572,12 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\textures\awesomeface.png" />
-    <Image Include="res\textures\bank.jpg" />
-    <Image Include="res\textures\chad.png" />
+    <Image Include="res\textures\coal.jpg" />
     <Image Include="res\textures\container.jpg" />
-    <Image Include="res\textures\dirt.jpg" />
-    <Image Include="res\textures\garden.jpg" />
-    <Image Include="res\textures\grass_b2.png" />
-    <Image Include="res\textures\grass_block.png" />
-    <Image Include="res\textures\shovel.png" />
+    <Image Include="res\textures\container2.png" />
+    <Image Include="res\textures\container2_specular.png" />
+    <Image Include="res\textures\diamond.png" />
+    <Image Include="res\textures\matrix.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\Error.txt" />
