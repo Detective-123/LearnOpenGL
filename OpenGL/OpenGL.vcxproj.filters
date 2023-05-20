@@ -21,7 +21,7 @@
     <ClCompile Include="src\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\shader_s.cpp">
+    <ClCompile Include="src\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\vendors\stb_image\stb_image.cpp">
@@ -30,7 +30,10 @@
     <ClCompile Include="src\vendors\glm\detail\glm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\camera_s.cpp">
+    <ClCompile Include="src\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -445,11 +448,35 @@
     <None Include="src\vendors\glm\gtx\wrap.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="res\shaders\vecLight_cube.glsl" />
-    <None Include="res\shaders\fragLight_cube.glsl" />
+    <None Include="res\shaders\vertex.glsl" />
+    <None Include="res\shaders\fragment.glsl" />
+    <None Include="src\vendors\assimp\color4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\material.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\matrix3x3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\matrix4x4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\quaternion.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\SmoothingGroups.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\vector2.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\vendors\assimp\vector3.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\shader_s.h">
+    <ClInclude Include="src\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\vendors\stb_image\stb_image.h">
@@ -1301,7 +1328,259 @@
     <ClInclude Include="src\vendors\glm\vector_relational.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\camera_s.h">
+    <ClInclude Include="src\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Compiler\poppack1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Compiler\pstdint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Compiler\pushpack1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\port\AndroidJNI\AndroidJNIIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\port\AndroidJNI\BundledAssetIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\aabb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ai_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\anim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Base64.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\BaseImporter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Bitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\BlobIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ByteSwapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\cexport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\cfileio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\cimport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ColladaMetaData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\color4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\commonMetaData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\CreateAnimMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\DefaultIOStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\DefaultIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\DefaultLogger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Exceptional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Exporter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\fast_atof.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\GenericProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\GltfMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Importer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\importerdesc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\IOStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\IOStreamBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\IOSystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\LineSplitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\LogAux.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Logger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\LogStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\MathFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\matrix3x3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\matrix4x4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\MemoryIOWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\metadata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\NullLogger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ObjMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ParsingUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\pbrmaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\postprocess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Profiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ProgressHandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\qnan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\RemoveComments.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SceneCombiner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SGSpatialSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SkeletonMeshBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SmallVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SmoothingGroups.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\SpatialSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\StandardShapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\StreamReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\StreamWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\StringComparison.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\StringUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Subdivision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\TinyFormatter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\vector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\XmlParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\XMLTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendors\assimp\ZipArchiveIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1327,8 +1606,153 @@
     <Image Include="res\textures\matrix.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\objects\backpack\ao.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\backpack\diffuse.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\backpack\normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\backpack\roughness.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\backpack\specular.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\asf.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Emissive2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Emissive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_AO.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_BaseColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Metallic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Roughness.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\Error.txt" />
+    <Text Include="res\objects\backpack\source_attribution.txt" />
   </ItemGroup>
 </Project>

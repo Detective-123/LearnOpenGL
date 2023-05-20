@@ -111,7 +111,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLFW\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;shell32.lib;gdi32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;shell32.lib;gdi32.lib;$(SolutionDir)Dependencies/assimp/lib/assimp-vc143-mtd.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,18 +134,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\mesh.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\camera_s.cpp" />
+    <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\glad.c" />
-    <ClCompile Include="src\shader_s.cpp" />
+    <ClCompile Include="src\shader.cpp" />
     <ClCompile Include="src\vendors\glm\detail\glm.cpp" />
     <ClCompile Include="src\vendors\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\fragColor.glsl" />
     <None Include="res\shaders\vecColor.glsl" />
-    <None Include="res\shaders\fragLight_cube.glsl" />
-    <None Include="res\shaders\vecLight_cube.glsl" />
+    <None Include="res\shaders\fragment.glsl" />
+    <None Include="res\shaders\vertex.glsl" />
+    <None Include="src\vendors\assimp\color4.inl" />
+    <None Include="src\vendors\assimp\material.inl" />
+    <None Include="src\vendors\assimp\matrix3x3.inl" />
+    <None Include="src\vendors\assimp\matrix4x4.inl" />
+    <None Include="src\vendors\assimp\quaternion.inl" />
+    <None Include="src\vendors\assimp\SmoothingGroups.inl" />
+    <None Include="src\vendors\assimp\vector2.inl" />
+    <None Include="src\vendors\assimp\vector3.inl" />
     <None Include="src\vendors\glm\detail\func_common.inl" />
     <None Include="src\vendors\glm\detail\func_common_simd.inl" />
     <None Include="src\vendors\glm\detail\func_exponential.inl" />
@@ -284,8 +293,92 @@
     <None Include="src\vendors\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\camera_s.h" />
-    <ClInclude Include="src\shader_s.h" />
+    <ClInclude Include="src\model.h" />
+    <ClInclude Include="src\mesh.h" />
+    <ClInclude Include="src\camera.h" />
+    <ClInclude Include="src\shader.h" />
+    <ClInclude Include="src\vendors\assimp\aabb.h" />
+    <ClInclude Include="src\vendors\assimp\ai_assert.h" />
+    <ClInclude Include="src\vendors\assimp\anim.h" />
+    <ClInclude Include="src\vendors\assimp\Base64.hpp" />
+    <ClInclude Include="src\vendors\assimp\BaseImporter.h" />
+    <ClInclude Include="src\vendors\assimp\Bitmap.h" />
+    <ClInclude Include="src\vendors\assimp\BlobIOSystem.h" />
+    <ClInclude Include="src\vendors\assimp\ByteSwapper.h" />
+    <ClInclude Include="src\vendors\assimp\camera.h" />
+    <ClInclude Include="src\vendors\assimp\cexport.h" />
+    <ClInclude Include="src\vendors\assimp\cfileio.h" />
+    <ClInclude Include="src\vendors\assimp\cimport.h" />
+    <ClInclude Include="src\vendors\assimp\ColladaMetaData.h" />
+    <ClInclude Include="src\vendors\assimp\color4.h" />
+    <ClInclude Include="src\vendors\assimp\commonMetaData.h" />
+    <ClInclude Include="src\vendors\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="src\vendors\assimp\Compiler\pstdint.h" />
+    <ClInclude Include="src\vendors\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="src\vendors\assimp\config.h" />
+    <ClInclude Include="src\vendors\assimp\CreateAnimMesh.h" />
+    <ClInclude Include="src\vendors\assimp\DefaultIOStream.h" />
+    <ClInclude Include="src\vendors\assimp\DefaultIOSystem.h" />
+    <ClInclude Include="src\vendors\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="src\vendors\assimp\defs.h" />
+    <ClInclude Include="src\vendors\assimp\Exceptional.h" />
+    <ClInclude Include="src\vendors\assimp\Exporter.hpp" />
+    <ClInclude Include="src\vendors\assimp\fast_atof.h" />
+    <ClInclude Include="src\vendors\assimp\GenericProperty.h" />
+    <ClInclude Include="src\vendors\assimp\GltfMaterial.h" />
+    <ClInclude Include="src\vendors\assimp\Hash.h" />
+    <ClInclude Include="src\vendors\assimp\Importer.hpp" />
+    <ClInclude Include="src\vendors\assimp\importerdesc.h" />
+    <ClInclude Include="src\vendors\assimp\IOStream.hpp" />
+    <ClInclude Include="src\vendors\assimp\IOStreamBuffer.h" />
+    <ClInclude Include="src\vendors\assimp\IOSystem.hpp" />
+    <ClInclude Include="src\vendors\assimp\light.h" />
+    <ClInclude Include="src\vendors\assimp\LineSplitter.h" />
+    <ClInclude Include="src\vendors\assimp\LogAux.h" />
+    <ClInclude Include="src\vendors\assimp\Logger.hpp" />
+    <ClInclude Include="src\vendors\assimp\LogStream.hpp" />
+    <ClInclude Include="src\vendors\assimp\material.h" />
+    <ClInclude Include="src\vendors\assimp\MathFunctions.h" />
+    <ClInclude Include="src\vendors\assimp\matrix3x3.h" />
+    <ClInclude Include="src\vendors\assimp\matrix4x4.h" />
+    <ClInclude Include="src\vendors\assimp\MemoryIOWrapper.h" />
+    <ClInclude Include="src\vendors\assimp\mesh.h" />
+    <ClInclude Include="src\vendors\assimp\metadata.h" />
+    <ClInclude Include="src\vendors\assimp\NullLogger.hpp" />
+    <ClInclude Include="src\vendors\assimp\ObjMaterial.h" />
+    <ClInclude Include="src\vendors\assimp\ParsingUtils.h" />
+    <ClInclude Include="src\vendors\assimp\pbrmaterial.h" />
+    <ClInclude Include="src\vendors\assimp\port\AndroidJNI\AndroidJNIIOSystem.h" />
+    <ClInclude Include="src\vendors\assimp\port\AndroidJNI\BundledAssetIOSystem.h" />
+    <ClInclude Include="src\vendors\assimp\postprocess.h" />
+    <ClInclude Include="src\vendors\assimp\Profiler.h" />
+    <ClInclude Include="src\vendors\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="src\vendors\assimp\qnan.h" />
+    <ClInclude Include="src\vendors\assimp\quaternion.h" />
+    <ClInclude Include="src\vendors\assimp\RemoveComments.h" />
+    <ClInclude Include="src\vendors\assimp\scene.h" />
+    <ClInclude Include="src\vendors\assimp\SceneCombiner.h" />
+    <ClInclude Include="src\vendors\assimp\SGSpatialSort.h" />
+    <ClInclude Include="src\vendors\assimp\SkeletonMeshBuilder.h" />
+    <ClInclude Include="src\vendors\assimp\SmallVector.h" />
+    <ClInclude Include="src\vendors\assimp\SmoothingGroups.h" />
+    <ClInclude Include="src\vendors\assimp\SpatialSort.h" />
+    <ClInclude Include="src\vendors\assimp\StandardShapes.h" />
+    <ClInclude Include="src\vendors\assimp\StreamReader.h" />
+    <ClInclude Include="src\vendors\assimp\StreamWriter.h" />
+    <ClInclude Include="src\vendors\assimp\StringComparison.h" />
+    <ClInclude Include="src\vendors\assimp\StringUtils.h" />
+    <ClInclude Include="src\vendors\assimp\Subdivision.h" />
+    <ClInclude Include="src\vendors\assimp\texture.h" />
+    <ClInclude Include="src\vendors\assimp\TinyFormatter.h" />
+    <ClInclude Include="src\vendors\assimp\types.h" />
+    <ClInclude Include="src\vendors\assimp\vector2.h" />
+    <ClInclude Include="src\vendors\assimp\vector3.h" />
+    <ClInclude Include="src\vendors\assimp\version.h" />
+    <ClInclude Include="src\vendors\assimp\Vertex.h" />
+    <ClInclude Include="src\vendors\assimp\XmlParser.h" />
+    <ClInclude Include="src\vendors\assimp\XMLTools.h" />
+    <ClInclude Include="src\vendors\assimp\ZipArchiveIOSystem.h" />
     <ClInclude Include="src\vendors\glm\common.hpp" />
     <ClInclude Include="src\vendors\glm\detail\compute_common.hpp" />
     <ClInclude Include="src\vendors\glm\detail\compute_vector_relational.hpp" />
@@ -571,6 +664,54 @@
     <ClInclude Include="src\vendors\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\objects\backpack\ao.jpg" />
+    <Image Include="res\objects\backpack\diffuse.jpg" />
+    <Image Include="res\objects\backpack\normal.png" />
+    <Image Include="res\objects\backpack\roughness.jpg" />
+    <Image Include="res\objects\backpack\specular.jpg" />
+    <Image Include="res\objects\gun\asf.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Emissive.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Emissive2.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_aim_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Emissive.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_detail_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_feather_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Emissive.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_front_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_handle_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_Midle_parts_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wires_Roughness.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_AO.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_BaseColor.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Metallic.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Normal.png" />
+    <Image Include="res\objects\gun\RAINIER_AK___Low3_wood_parts_Roughness.png" />
     <Image Include="res\textures\awesomeface.png" />
     <Image Include="res\textures\coal.jpg" />
     <Image Include="res\textures\container.jpg" />
@@ -580,6 +721,7 @@
     <Image Include="res\textures\matrix.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="res\objects\backpack\source_attribution.txt" />
     <Text Include="src\Error.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
